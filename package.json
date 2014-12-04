@@ -8,12 +8,16 @@
     "name": "Daniel Krainas",
     "email": "me@danielkrainas.com"
   },
+  "bin": {
+    "tinkr-svc": "bin/tinkr-svc"
+  },
   "engines": {
     "node": "0.10.x || 0.8.x"
   },
   "scripts": {
     "start": "node server.js"
   },
+  "preferGlobal": true,
   "dependencies": {
     "body-parser": "~1.9.2",
     "express": "~4.10.1",
