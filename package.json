@@ -1,0 +1,36 @@
+{
+  "name": "tinkr",
+  "version": "0.0.1",
+  "description": "Tinkr server",
+  "main": "server.js",
+  "private": false,
+  "author": {
+    "name": "Daniel Krainas",
+    "email": "me@danielkrainas.com"
+  },
+  "engines": {
+    "node": "0.10.x || 0.8.x"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "~1.9.2",
+    "express": "~4.10.1",
+    "http-proxy": "~1.6.0",
+    "jsonfile": "~2.0.0",
+    "lodash": "~2.4.1",
+    "morgan": "~1.4.1",
+    "node-netstat": "~0.7.1",
+    "interpolate": "~0.1.0",
+    "fs-extra": "~0.12.0",
+    "async": "~0.9.0",
+    "adm-zip": "~0.4.4",
+    "multer": "~0.1.6",
+    "github": "~0.2.3",
+    "semver": "~4.1.0",
+    "moment": "~2.8.4",
+    "toml": "~2.0.6"
+  },
+  "devDependencies": {}
+}
