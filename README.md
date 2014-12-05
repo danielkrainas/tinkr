@@ -10,10 +10,16 @@ Tinkr is designed to be a poor-man's PaaS. Together, with the [tinkr-cli](https:
 `$ npm install tinkr -g`
 
 
+## Usage
+
+The module includes a command called `tinkrd` and can be executed via the command line:
+
+`$ tinkrd`
+
+
 ## But... the cloud!
 
-I've always enjoyed the power, cost efficiency, and general guarantees that come with a dedicated server. Unfortunately, getting one setup with nginx, sftp, and any other number of required services can be time
-consuming and frustrating. There's also the cases where I want to make apps for things like my home network, when you might have one or more computers. Tinkr is my solution to both of these problems and more.  
+I've always enjoyed the power, cost efficiency, and general guarantees that come with a dedicated private server. Unfortunately, getting one setup with nginx, sftp, and any other number of required services can be time consuming and frustrating. There's also the cases where I want to make apps for things like my home network, when you might have one or more computers. Tinkr is my solution to both of these problems and more.  
 
 
 ## Features
