@@ -4,6 +4,10 @@
   "description": "Tinkr server",
   "main": "server.js",
   "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:danielkrainas/tinkr.git"
+  },
   "author": {
     "name": "Daniel Krainas",
     "email": "me@danielkrainas.com"
