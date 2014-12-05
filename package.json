@@ -9,7 +9,7 @@
     "email": "me@danielkrainas.com"
   },
   "bin": {
-    "tinkr-svc": "bin/tinkr-svc"
+    "tinkrd": "bin/tinkrd"
   },
   "engines": {
     "node": "0.10.x || 0.8.x"
