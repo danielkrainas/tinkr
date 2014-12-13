@@ -13,7 +13,7 @@
     "email": "me@danielkrainas.com"
   },
   "bin": {
-    "tinkrd": "bin/tinkrd"
+    "tinkrd": "./bin/tinkrd.js"
   },
   "engines": {
     "node": "0.10.x || 0.8.x"
