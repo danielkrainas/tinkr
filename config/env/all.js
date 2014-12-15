@@ -9,6 +9,8 @@ module.exports = {
 
     home: homePath,
 
+    stubDataFile: path.join(homePath, 'stubs.db'),
+
     dataFolder: process.env.TINKR_DATA_FOLDER || path.join(rootPath, 'data'),
 
     projectFolder: process.env.TINKR_PROJECT_FOLDER || path.join(rootPath, 'projects'),
