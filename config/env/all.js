@@ -13,11 +13,10 @@ module.exports = {
 
     snapshotDataFile: path.join(homePath, 'snapshots.db'),
 
-    dataFolder: process.env.TINKR_DATA_FOLDER || path.join(rootPath, 'data'),
 
-    projectFolder: process.env.TINKR_PROJECT_FOLDER || path.join(rootPath, 'projects'),
+    projectFolder: path.join(homePath, 'projects'),
 
-    snapshotFolder: process.env.TINKR_SNAPSHOT_FOLDER || path.join(rootPath, 'snapshots'),
+    snapshotFolder: path.join(homePath, 'snapshots'),
 
     app: {
         name: 'Tinkr'
