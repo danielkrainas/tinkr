@@ -11,6 +11,8 @@ module.exports = {
 
     stubDataFile: path.join(homePath, 'stubs.db'),
 
+    snapshotDataFile: path.join(homePath, 'snapshots.db'),
+
     dataFolder: process.env.TINKR_DATA_FOLDER || path.join(rootPath, 'data'),
 
     projectFolder: process.env.TINKR_PROJECT_FOLDER || path.join(rootPath, 'projects'),

@@ -15,13 +15,13 @@ require('./config/express')(app);
 
 async.series([
     stubs.load,
+    snapshots.load,
 ], function (err) {
     if (err) {
         console.error('could not start ' + config.app.name);
         return console.error(err);
     }
 
-    snapshots.load();
     projects.loadAll();
     projects.startAllAuto();
     var server = http.Server(app);
