@@ -1,17 +1,23 @@
 var path = require('path');
 var rootPath = path.normalize(__dirname + '/../..');
-
+var homePath = process.env.TINKR_HOME || path.resolve(path.join(process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'], '.\\.tinkr'));
 
 module.exports = {
     pkg: require(path.join(rootPath, 'package.json')),
 
 	root: rootPath,
 
-    dataFolder: process.env.TINKR_DATA_FOLDER || path.join(rootPath, 'data'),
+    home: homePath,
 
-    projectFolder: process.env.TINKR_PROJECT_FOLDER || path.join(rootPath, 'projects'),
+    stubDataFile: path.join(homePath, 'stubs.db'),
 
-    snapshotFolder: process.env.TINKR_SNAPSHOT_FOLDER || path.join(rootPath, 'snapshots'),
+    snapshotDataFile: path.join(homePath, 'snapshots.db'),
+
+    projectDataFile: path.join(homePath, 'projects.db'),
+
+    projectFolder: path.join(homePath, 'projects'),
+
+    snapshotFolder: path.join(homePath, 'snapshots'),
 
     app: {
         name: 'Tinkr'
