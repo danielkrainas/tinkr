@@ -13,6 +13,7 @@ module.exports = {
 
     snapshotDataFile: path.join(homePath, 'snapshots.db'),
 
+    projectDataFile: path.join(homePath, 'projects.db'),
 
     projectFolder: path.join(homePath, 'projects'),
 
