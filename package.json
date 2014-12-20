@@ -1,6 +1,6 @@
 {
   "name": "tinkr",
-  "version": "0.0.4",
+  "version": "0.0.12",
   "description": "Tinkr server",
   "main": "server.js",
   "private": false,
