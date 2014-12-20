@@ -1,3 +1,4 @@
 #!/usr/bin/env node
+var path = require('path');
 
-require('../server');
+require(path.join(__dirname, '../server'));
