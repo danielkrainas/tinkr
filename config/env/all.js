@@ -23,5 +23,5 @@ module.exports = {
         name: 'Tinkr'
     },
 
-	port: process.env.TINKR_PORT || 2999
+	port: process.env.TINKR_PORT || 80
 };
