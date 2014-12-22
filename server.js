@@ -17,13 +17,13 @@ async.series([
     stubs.load,
     snapshots.load,
     projects.load,
+    projects.startAllAuto
 ], function (err) {
     if (err) {
         console.error('could not start ' + config.app.name);
         return console.error(err);
     }
     
-    projects.startAllAuto();
     var server = http.Server(app);
     var port = config.port;
     server.listen(port);
