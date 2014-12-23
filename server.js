@@ -34,7 +34,7 @@ function startServer() {
             console.log(config.app.name + ' shutting down.');
             server.close();
             projects.shutdown(function () {
-                
+                console.log('bye');
             });
         });
     });
