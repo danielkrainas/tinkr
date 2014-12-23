@@ -35,7 +35,8 @@
     "adm-zip": "~0.4.4",
     "multer": "~0.1.6",
     "toml": "~2.0.6",
-    "nedb": "~1.0.0"
+    "nedb": "~1.0.0",
+    "commander": "~2.5.1"
   },
   "devDependencies": {}
 }
