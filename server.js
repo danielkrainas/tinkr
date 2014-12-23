@@ -30,6 +30,13 @@ function startServer() {
         server.listen(port);
         console.log(config.app.name + ' (' + process.env.NODE_ENV + ')' + ' started on port ' + port);
 
+        process.on('SIGTERM', function () {
+            console.log(config.app.name + ' shutting down.');
+            server.close();
+            projects.shutdown(function () {
+                
+            });
+        });
     });
 }
 
