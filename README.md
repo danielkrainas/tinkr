@@ -32,10 +32,8 @@ I've always enjoyed the power, cost efficiency, and general guarantees that come
 
 ## Environment Settings
 
-- **PORT** - port to host the http service (default: 2999).
-- **TINKR\_DATA_FOLDER** - folder path where tinkr should store it's data.
-- **TINKR\_PROJECT_FOLDER** - folder path where tinkr should keep live-running projects.
-- **TINKR\_SNAPSHOT_FOLDER** - folder to store deployed snapshots.  
+- **TINKR\_PORT** - port to host the http service (default: 2999).
+- **TINKR\_HOME** - folder path where tinkr should store its packages and data files.
  
 
 ## Contributions
