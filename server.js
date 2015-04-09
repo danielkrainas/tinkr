@@ -6,12 +6,26 @@ var express = require('express'),
     async = require('async'),
     router = express.Router();
 
-var config = require('./config');
+var config = exports.config = require('./config');
 
-var app = express();
-require('./config/express')(app);
+var installers = exports.installers = {};
+
+var installer_paths = __dirname + '/lib/installers';
+var walk = function (path) {
+    fs.readdirSync(path).forEach(function (file) {
+        var newPath = path + '/' + file;
+        var stat = fs.statSync(newPath);
+        if (stat.isFile() && file !== 'helpers.js' && /(.*).(js$)/.test(file)) {
+            installers[file] = require(newPath);
+        }
+    });
+};
+walk(installer_paths);
 
 function startServer() {
+    var app = express();
+    require('./config/express')(app);
+
     async.series([
         stubs.load,
         snapshots.load,
