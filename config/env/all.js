@@ -9,15 +9,15 @@ module.exports = {
 
     home: homePath,
 
-    stubDataFile: path.join(homePath, 'stubs.db'),
+    stubDataFile: 'stubs.db',
 
-    snapshotDataFile: path.join(homePath, 'snapshots.db'),
+    snapshotDataFile: 'snapshots.db',
 
-    projectDataFile: path.join(homePath, 'projects.db'),
+    projectDataFile: 'projects.db',
 
-    projectFolder: path.join(homePath, 'projects'),
+    projectFolder: 'projects',
 
-    snapshotFolder: path.join(homePath, 'snapshots'),
+    snapshotFolder: 'snapshots',
 
     app: {
         name: 'Tinkr'
