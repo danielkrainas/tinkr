@@ -4,9 +4,14 @@
   "description": "Tinkr service daemon",
   "main": "server.js",
   "private": false,
+  "homepage": "https://github.com/danielkrainas/tinkr",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git@github.com:danielkrainas/tinkr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/danielkrainas/tinkr/issues"
   },
   "author": {
     "name": "Daniel Krainas",
