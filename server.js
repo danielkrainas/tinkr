@@ -5,6 +5,7 @@ var express = require('express'),
     stubs = require('./lib/stubs'),
     async = require('async'),
     fs = require('fs'),
+    path = require('path'),
     router = express.Router();
 
 var config = exports.config = require('./config');
@@ -12,12 +13,12 @@ var config = exports.config = require('./config');
 var installers = exports.installers = {};
 
 var installer_paths = __dirname + '/lib/installers';
-var walk = function (path) {
-    fs.readdirSync(path).forEach(function (file) {
-        var newPath = path + '/' + file;
+var walk = function (currentPath) {
+    fs.readdirSync(currentPath).forEach(function (file) {
+        var newPath = currentPath + '/' + file;
         var stat = fs.statSync(newPath);
-        if (stat.isFile() && file !== 'helpers.js' && /(.*).(js$)/.test(file)) {
-            installers[file] = require(newPath);
+        if (stat.isFile() && /(.*).(js$)/.test(file)) {
+            installers[path.basename(file, '.js')] = require(newPath);
         }
     });
 };
