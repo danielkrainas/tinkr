@@ -1,6 +1,6 @@
 {
   "name": "tinkr",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Tinkr service daemon",
   "main": "server.js",
   "private": false,
