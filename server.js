@@ -4,6 +4,7 @@ var express = require('express'),
     snapshots = require('./lib/snapshots'),
     stubs = require('./lib/stubs'),
     async = require('async'),
+    fs = require('fs'),
     router = express.Router();
 
 var config = exports.config = require('./config');
