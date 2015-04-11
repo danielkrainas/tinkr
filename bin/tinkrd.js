@@ -3,6 +3,7 @@ var path = require('path');
 var program = require('commander');
 var tinkr = require(path.join(__dirname, '../server'));
 
+
 var runServer = true;
 
 program
