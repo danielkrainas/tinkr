@@ -45,7 +45,7 @@
     "morgan": "~1.4.1",
     "multer": "~0.1.6",
     "nedb": "~1.0.0",
-    "node-netstat": "~0.7.1",
+    "node-netstat": "^0.8.0",
     "toml": "~2.0.6",
     "wildcard": "^1.1.0"
   },
