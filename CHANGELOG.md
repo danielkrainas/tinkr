@@ -11,6 +11,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - HTTPS support
 - HTTPS service configurable via config settings
 - Enable/disable HTTPS via config setting
+- Code Climate badge for README
+- Dependency badge for README
 
 ### Changed
 - Upgraded note-netstat dependency to v0.8.0
