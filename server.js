@@ -14,17 +14,14 @@ var config = exports.config = require('./config');
 
 var installers = exports.installers = {};
 
-var installer_paths = __dirname + '/lib/installers';
-var walk = function (currentPath) {
-    fs.readdirSync(currentPath).forEach(function (file) {
-        var newPath = currentPath + '/' + file;
-        var stat = fs.statSync(newPath);
-        if (stat.isFile() && /(.*).(js$)/.test(file)) {
-            installers[path.basename(file, '.js')] = require(newPath);
-        }
-    });
-};
-walk(installer_paths);
+var installerPaths = __dirname + '/lib/installers';
+fs.readdirSync(installerPaths).forEach(function (file) {
+    var filePath = installerPaths + '/' + file;
+    var stat = fs.statSync(filePath);
+    if (stat.isFile() && path.extname(file) === '.js') {
+        installers[path.basename(file, '.js')] = require(filePath);
+    }
+});
 
 function startServer() {
     async.series([
