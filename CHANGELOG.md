@@ -5,5 +5,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased][unreleased]
 ### Added
 - This CHANGELOG file to hopefully capture any change notes.
+- Wildcard values for project domain setting.
+
+### Changed
+- Upgraded note-netstat dependency to v0.8.0
 
 [unreleased]: https://github.com/danielkrainas/tinkr/compare/v0.1.11...HEAD
