@@ -1,3 +1,10 @@
+var fs = require('fs');
+
 module.exports = {
-    port: 2999
+    https: {
+        credentials: {
+            pfx: fs.readFileSync(__dirname + '../../../test/ssl-certificate.pfx'),
+            passphrase: 'password'
+        }
+    }
 };

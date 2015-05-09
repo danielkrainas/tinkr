@@ -9,22 +9,26 @@ var stubManagementApi = require('../lib/api/stub-management');
 var config = require('./');
 
 
-module.exports = function (app) {
+module.exports = function (app, options) {
+    options = options || {};
+
     app.set('showStackError', true);
 
     app.use(proxyRouter);
 
-    app.use(morgan('dev'));
+    if (options.api) {
+        app.use(morgan('dev'));
 
-    app.use(bodyParser.urlencoded({ extended: true }));
-    app.use(bodyParser.json());
+        app.use(bodyParser.urlencoded({ extended: true }));
+        app.use(bodyParser.json());
 
-    app.use(multer({
+        app.use(multer({
 
-    }));
-    
-    app.use(projectManagementApi);
-    app.use(stubManagementApi);
+        }));
+        
+        app.use(projectManagementApi);
+        app.use(stubManagementApi);
+    }
 
     app.use(function (err, req, res, next) {
         if (~err.message.indexOf('not found')) {

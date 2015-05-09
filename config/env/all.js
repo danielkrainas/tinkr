@@ -19,9 +19,28 @@ module.exports = {
 
     snapshotFolder: 'snapshots',
 
+    extraConfig: process.env.TINKR_CONFIG || null,
+
+    localConfig: 'config.json',
+
+    certificatesFolder: 'certificates',
+
     app: {
         name: 'Tinkr'
     },
 
-	port: process.env.TINKR_PORT || 80
+    http: {
+        api: false,
+        enabled: true,
+        port: process.env.TINKR_PORT || 2999
+    },
+
+    https: {
+        api: true,
+        enabled: true,
+        port: process.env.TINKR_HTTPS_PORT || 2998,
+        credentials: {
+            
+        }
+    }
 };
