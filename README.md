@@ -7,7 +7,6 @@ Tinkr is designed to be a poor-man's PaaS. Together, with the [tinkr-cli](https:
 
 **Please Note:** this is still a work in progress as I flush out the featureset of both client and server. 
 
-
 ## Installation
 
 `$ npm install tinkr -g`

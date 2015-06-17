@@ -16,8 +16,10 @@ module.exports = function (app, options) {
 
     app.use(proxyRouter);
 
+    app.use(morgan('dev'));
+
     if (options.api) {
-        app.use(morgan('dev'));
+        //app.use(morgan('dev'));
 
         app.use(bodyParser.urlencoded({ extended: true }));
         app.use(bodyParser.json());
