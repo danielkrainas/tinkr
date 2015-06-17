@@ -1,73 +1,30 @@
-var express = require('express'),
-    http = require('http'),
-    https = require('https'),
-    projects = require('./lib/project-list'),
-    snapshots = require('./lib/snapshots'),
-    stubs = require('./lib/stubs'),
-    async = require('async'),
-    fs = require('fs'),
-    path = require('path'),
-    configureExpress = require('./config/express'),
-    router = express.Router();
+var express = require('express');
+var http = require('http');
+var https = require('https');
+var interpolate = require('interpolate');
+var Promise = require('bluebird');
 
+var projects = require('./lib/project-list');
+var snapshots = require('./lib/snapshots');
+var stubs = require('./lib/stubs');
+var configureExpress = require('./config/express');
+var loadCredentials = require('./config/credentials');
+var loadInstallers = require('./lib/installers');
+var pm = require('./lib/process-manager');
 var config = exports.config = require('./config');
-
-var installers = exports.installers = {};
-
-var installerPaths = __dirname + '/lib/installers';
-fs.readdirSync(installerPaths).forEach(function (file) {
-    var filePath = installerPaths + '/' + file;
-    var stat = fs.statSync(filePath);
-    if (stat.isFile() && path.extname(file) === '.js') {
-        installers[path.basename(file, '.js')] = require(filePath);
-    }
-});
+var installers = exports.installers = loadInstallers();
 
 function startServer() {
-    async.series([
-        stubs.load,
-        snapshots.load,
-        projects.load,
-        projects.startAllAuto,
-        function (callback) {
-            if (config.https.enabled && config.https.credentials.pfx || config.https.credentials.cert) {
-                return callback();
-            }
+    var tasks = [
+        stubs.load(),
+        snapshots.load(),
+        projects.load(),
+        projects.startAllAuto(),
+        loadCredentials()
+    ];
 
-            config.https.credentials.cert = [];
-            config.https.credentials.key = [];
 
-            var certificatesPath = path.join(config.home, config.certificatesFolder);
-            fs.readdir(certificatesPath, function (err, files) {
-                async.each(files, function (file, next) {
-                    var newPath = certificatesPath + '/' + file;
-                    var ext = path.extname(file).toLowerCase();
-                    if (ext === '.pem' || ext === '.key') {
-                        fs.readFile(newPath, function (err, content) {
-                            if (err) {
-                                return next(err);
-                            }
-
-                            var dest = 'cert';
-                            if (ext[1] === 'k') {
-                                dest = 'key';
-                            }
-
-                            config.https.credentials[dest].push(content);
-                            next();
-                        });
-                    } else {
-                        next();
-                    }
-                }, callback);
-            });
-        }
-    ], function (err) {
-        if (err) {
-            console.error('could not start ' + config.app.name);
-            return console.error(err);
-        }
-
+    Promise.all(tasks).then(function () {
         var httpsServer;
         var httpServer;
         var app;
@@ -86,7 +43,19 @@ function startServer() {
             httpsServer.listen(config.https.port);
         }
         
-        console.log(config.app.name + ' (' + process.env.NODE_ENV + ')' + ' started on port ' + config.http.port + ' (ssl: ' + config.https.port + ')');
+        console.log(interpolate('{name} ({env}) started.', {
+            name: config.app.name,
+            env: process.env.NODE_ENV
+        }));
+
+        if (config.https.enabled) {
+            console.log(interpolate('HTTPS({port}): api={api} on={enabled}', config.https));
+        }
+
+        if (config.http.enabled) {
+            console.log(interpolate('HTTP({port}): api={api} on={enabled}', config.http));
+        }
+    
         process.on('SIGTERM', function () {
             console.log(config.app.name + ' shutting down.');
             if (httpServer) {
@@ -101,6 +70,10 @@ function startServer() {
                 console.log('bye');
             });
         });
+    }).catch(function (err) {
+        console.error('could not start ' + config.app.name);
+        //console.error(err);
+        console.log(err.stack);
     });
 }
 
