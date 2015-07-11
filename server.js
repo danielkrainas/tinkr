@@ -28,7 +28,7 @@ function startServer() {
         var httpsServer;
         var httpServer;
         var app;
-        
+
         if (config.http.enabled) {
             app = express();
             configureExpress(app, config.http);
@@ -66,7 +66,7 @@ function startServer() {
                 httpsServer.close();
             }
             
-            projects.shutdown(function () {
+            pm.shutdown(function () {
                 console.log('bye');
             });
         });
