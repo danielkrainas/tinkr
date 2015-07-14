@@ -9,7 +9,7 @@ module.exports = {
 
     home: homePath,
 
-    stubDataFile: 'stubs.db',
+    relayDataFile: 'relays.db',
 
     snapshotDataFile: 'snapshots.db',
 

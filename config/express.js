@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 
 var proxyRouter = require('../lib/proxy-router');
 var projectManagementApi = require('../lib/api/project-management');
-var stubManagementApi = require('../lib/api/stub-management');
+var relayManagementApi = require('../lib/api/relay-management');
 var config = require('./');
 
 
@@ -29,7 +29,7 @@ module.exports = function (app, options) {
         }));
         
         app.use(projectManagementApi);
-        app.use(stubManagementApi);
+        app.use(relayManagementApi);
     }
 
     app.use(function (err, req, res, next) {

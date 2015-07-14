@@ -6,7 +6,7 @@ var Promise = require('bluebird');
 
 var projects = require('./lib/project-list');
 var snapshots = require('./lib/snapshots');
-var stubs = require('./lib/stubs');
+var relays = require('./lib/relays');
 var configureExpress = require('./config/express');
 var loadCredentials = require('./config/credentials');
 var loadInstallers = require('./lib/installers');
@@ -16,7 +16,7 @@ var installers = exports.installers = loadInstallers();
 
 function startServer() {
     var tasks = [
-        stubs.load(),
+        relays.load(),
         snapshots.load(),
         projects.load(),
         projects.startAllAuto(),
