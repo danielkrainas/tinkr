@@ -26,7 +26,7 @@ module.exports = {
     certificatesFolder: 'certificates',
 
     app: {
-        name: 'Tinkr'
+        name: 'Tinkrd'
     },
 
     http: {

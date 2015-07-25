@@ -15,6 +15,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Dependency badge for README
 
 ### Changed
+- Name in configuration from Tinkr to Tinkrd
 - Default home directory from $HOME/.tinkr to $HOME/.tinkrd
 - Upgraded note-netstat dependency to v0.8.0
 - Enable/disable HTTP via config setting
