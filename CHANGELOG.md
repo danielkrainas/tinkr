@@ -15,6 +15,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Dependency badge for README
 
 ### Changed
+- TINKR_HOME environment variable to TINKRD_HOME
+- TINKR_PORT environment variable to TINKRD_PORT
+- TINKR_HTTPS_PORT environment variable to TINKRD_HTTPS_PORT
+- TINKR_CONFIG environment variable to TINKRD_CONFIG
 - Name in configuration from Tinkr to Tinkrd
 - Default home directory from $HOME/.tinkr to $HOME/.tinkrd
 - Upgraded note-netstat dependency to v0.8.0

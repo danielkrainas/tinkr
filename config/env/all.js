@@ -1,6 +1,6 @@
 var path = require('path');
 var rootPath = path.normalize(__dirname + '/../..');
-var homePath = process.env.TINKR_HOME || path.resolve(path.join(process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'], '.\\.tinkrd'));
+var homePath = process.env.TINKRD_HOME || path.resolve(path.join(process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'], '.\\.tinkrd'));
 
 module.exports = {
     pkg: require(path.join(rootPath, 'package.json')),
@@ -19,7 +19,7 @@ module.exports = {
 
     snapshotFolder: 'snapshots',
 
-    extraConfig: process.env.TINKR_CONFIG || null,
+    extraConfig: process.env.TINKRD_CONFIG || null,
 
     localConfig: 'config.json',
 
@@ -32,13 +32,13 @@ module.exports = {
     http: {
         api: false,
         enabled: true,
-        port: process.env.TINKR_PORT || 2999
+        port: process.env.TINKRD_PORT || 2999
     },
 
     https: {
         api: true,
         enabled: true,
-        port: process.env.TINKR_HTTPS_PORT || 2998,
+        port: process.env.TINKRD_HTTPS_PORT || 2998,
         credentials: {
             
         }

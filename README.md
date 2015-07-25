@@ -34,10 +34,10 @@ I've always enjoyed the power, cost efficiency, and general guarantees that come
 
 ## Environment Settings
 
-- **TINKR\_PORT** - port to host the http service (default: 2999).
-- **TINKR\_HTTPS_PORT** - port to host the https service (default: 2998).
-- **TINKR\_HOME** - folder path where tinkr should store its packages and data files.
-- **TINKR\_CONFIG** - path to config file.
+- **TINKRD\_PORT** - port to host the http service (default: 2999).
+- **TINKRD\_HTTPS_PORT** - port to host the https service (default: 2998).
+- **TINKRD\_HOME** - folder path where tinkr should store its packages and data files.
+- **TINKRD\_CONFIG** - path to config file.
  
 
 ## Contributions
