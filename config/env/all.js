@@ -25,6 +25,8 @@ module.exports = {
 
     certificatesFolder: 'certificates',
 
+    logFolder: 'logs',
+
     app: {
         name: 'Tinkrd'
     },
