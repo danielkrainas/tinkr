@@ -27,6 +27,8 @@ module.exports = {
 
     logFolder: 'logs',
 
+    logFileExtension: '.txt',
+
     app: {
         name: 'Tinkrd'
     },
