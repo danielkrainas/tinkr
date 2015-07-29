@@ -13,6 +13,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Enable/disable HTTPS via config setting
 - Code Climate badge for README
 - Dependency badge for README
+- Project output logging
+- Configurable log file extensions
 
 ### Changed
 - TINKR_HOME environment variable to TINKRD_HOME
