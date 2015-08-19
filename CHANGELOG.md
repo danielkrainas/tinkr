@@ -15,6 +15,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Dependency badge for README
 - Project output logging
 - Configurable log file extensions
+- API endpoint for updating project metadata
 
 ### Changed
 - TINKR_HOME environment variable to TINKRD_HOME
